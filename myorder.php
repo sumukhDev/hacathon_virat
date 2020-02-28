@@ -113,7 +113,7 @@ padding: 30px;
                 </div>
             </nav>
              <?php
-$conn= mysqli_connect("localhost:3307","root","","hackthon");
+$conn= mysqli_connect("localhost","root","","admin");
 if(mysqli_error($conn)) {
     echo "failed";
 }
@@ -136,8 +136,8 @@ if ($result->num_rows> 0) {
                     //  echo "Price:-".$row["detail"]."";
                       echo "<br>";
                     //  echo "<hr>";
-                       $img= '<img src="data:image/jpeg;base64,'.base64_encode($row['photo'] ).'" height="30" width="30" class="img-thumnail" />';
-    echo "<tr><td>" . $row["product_id"]. "</td><td> " . $row["pname"]."</td><td> " . $img."</td><td> " . $row["price"]."</td><td> " . $row["detail"]."</td><td> " . $row["payment_method"]. "</td></tr>";
+                       $img= '<img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="30" width="30" class="img-thumnail" />';
+    echo "<tr><td>" . $row["product_id"]. "</td><td> " . $row["product_name"]."</td><td> " . $img."</td><td> " . $row["price"]."</td><td> " . $row["detail"]."</td><td> " . $row["payment_method"]. "</td></tr>";
                 }  
                 echo "</table>";
 }
